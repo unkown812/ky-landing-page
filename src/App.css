@@ -56,7 +56,7 @@
 
     body {
       font-family: 'Montserrat', sans-serif;
-      background: var(--navy);
+      background: var(--cream);
       color: var(--cream);
       display: flex;
       align-items: center;
@@ -68,6 +68,7 @@
     /* ── Animated background ── */
     .bg-canvas {
       position: fixed; inset: 0; z-index: 0;
+      /* background: radial-gradient(ellipse 120% 80% at 50% 0%, #1a2d5a 0%, #0d1b3e 55%, #050e22 100%); */
       background: radial-gradient(ellipse 120% 80% at 50% 0%, #1a2d5a 0%, #0d1b3e 55%, #050e22 100%);
       overflow: hidden;
     }
@@ -241,57 +242,6 @@
       animation: fade-up 1.2s .6s cubic-bezier(.22,1,.36,1) both;
     }
 
-    /* ── Countdown ── */
-    .countdown {
-      display: flex; justify-content: center; gap: clamp(12px, 3vw, 32px);
-      margin-bottom: 3rem;
-      animation: fade-up 1.2s .7s cubic-bezier(.22,1,.36,1) both;
-    }
-
-    .count-box {
-      display: flex; flex-direction: column; align-items: center;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(201,168,76,0.18);
-      border-radius: 6px;
-      padding: clamp(10px,2vw,18px) clamp(14px,3vw,28px);
-      backdrop-filter: blur(8px);
-      position: relative; overflow: hidden;
-      transition: border-color .3s, transform .3s;
-    }
-    .count-box::before {
-      content: ''; position: absolute;
-      inset: 0; opacity: 0;
-      background: linear-gradient(135deg, rgba(201,168,76,0.1), transparent);
-      transition: opacity .3s;
-    }
-    .count-box:hover { border-color: rgba(201,168,76,0.45); transform: translateY(-3px); }
-    .count-box:hover::before { opacity: 1; }
-
-    .count-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 300;
-      color: var(--gold-light);
-      line-height: 1;
-      min-width: 2ch;
-      text-align: center;
-      font-variant-numeric: tabular-nums;
-    }
-    .count-label {
-      font-size: 0.55rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: rgba(201,168,76,0.55);
-      margin-top: 6px;
-    }
-    .count-sep {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.4rem;
-      color: rgba(201,168,76,0.3);
-      align-self: center;
-      margin-top: -10px;
-    }
-
     /* ── Email notify ── */
     .notify-wrap {
       display: flex; flex-direction: column; align-items: center; gap: 0.8rem;
@@ -359,8 +309,11 @@
 
     /* ── Footer ── */
     .footer {
-      position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
-      font-size: 0.6rem;
+      position: fixed; 
+      bottom:0;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 0.4rem;
       letter-spacing: 0.25em;
       color: rgba(201,168,76,0.3);
       text-transform: uppercase;
